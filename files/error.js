@@ -1,0 +1,9 @@
+module.exports=(fn)=>(req,res,next)=>{
+    try{
+        fn(req,res,next)
+    }
+    catch(error){
+        console.error(error)
+        res.send(500).send(err.message);
+    }
+}
